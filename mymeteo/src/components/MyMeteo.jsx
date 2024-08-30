@@ -64,7 +64,7 @@ function MyMeteo({ searched, nation, handleId }) {
 
                     </Container>
                 ) : (
-                    <Container>
+                    <Container className="border border-3 border-dark shadow-lg mb-3 custom">
                         <Row>
                             <Col xs={12} className=" text-lef mb-3">
                                 <h1 className="mb-0">{meteo.name}</h1>
