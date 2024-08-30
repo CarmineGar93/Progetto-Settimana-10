@@ -30,7 +30,9 @@ function MyMeteoNav({handleResearch, handleNation}) {
                         }}>Home</Link>
                         <Link to='/details' className={isActive('/details')}>Details</Link>
                     </Nav>
-                    <Form onSubmit={(e) => handleSubmit(e)} className="d-flex">
+                    {
+                        location.pathname === '/' ? (
+                            <Form onSubmit={(e) => handleSubmit(e)} className="d-flex">
                         <Form.Control
                             type="search"
                             placeholder="Search your city"
@@ -52,6 +54,10 @@ function MyMeteoNav({handleResearch, handleNation}) {
                         />
                         <Button type='submit' variant="outline-success">Search</Button>
                     </Form>
+                        ) : (
+                            <></>
+                        )
+                    }
                 </Navbar.Collapse>
             </Container>
         </Navbar>

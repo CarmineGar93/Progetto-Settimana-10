@@ -23,11 +23,13 @@ function WeeklyMeteo() {
                 const filter = data.list.filter((list) => {
                     return list.dt_txt.includes('15:00')
                 })
-                console.log(filter)
                 setList(filter)
+            } else {
+                throw new Error('errore')
             }
         } catch (err) {
             console.log(err)
+            navigate('/Notfound')
         }
     }
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
