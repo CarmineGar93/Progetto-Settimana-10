@@ -67,7 +67,7 @@ function MyMeteo({ searched, nation }) {
                     <Container>
                         <Row>
                             <Col xs={12} className=" text-lef mb-3">
-                                <h1 className="mb-0">Wheather {meteo.name}</h1>
+                                <h1 className="mb-0">Weather {meteo.name}</h1>
                                 <h5>{`${days[date.getDay()]}  ${date.getDate()} ${months[date.getMonth()]}`} </h5>
                             </Col>
                             <Col xs={12} lg={6}>
