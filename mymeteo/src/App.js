@@ -6,6 +6,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Welcome from './components/Welcome';
 import { useState } from 'react';
 import MyMeteos from './components/MyMeteos';
+import WeeklyMeteo from './components/WeeklyMeteo';
 
 function App() {
   const[searched, setSearched] = useState('')
@@ -16,6 +17,7 @@ function App() {
   const handleNation = (data) => {
     setNation(data)
   }
+  console.log(nation)
   return (
     <BrowserRouter>
     <Container fluid className='App p-0 vh-100'>
@@ -30,7 +32,7 @@ function App() {
             <MyMeteos searched={searched} nation={nation}></MyMeteos>
           </>
         }></Route>
-          <Route path='/details/:city/:nation'></Route>
+          <Route path='/details/:city' element={<WeeklyMeteo />}></Route>
         </Routes>
       </main>
     </Container>

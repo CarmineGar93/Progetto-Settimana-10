@@ -76,7 +76,7 @@ function MyMeteo({ searched, nation }) {
                                     <Col xs={12}>
                                         <h6 className="mb-0">Humidity: {meteo.main.humidity}%</h6>
                                         <h6 className="mb-0">Feels like: {kToC(meteo.main.feels_like)}<sup>°C</sup></h6>
-                                        <h6 className="mb-0">Sea level: {meteo.main.sea_level}mt</h6>
+                                        <h6 className="mb-0">Wind speed {meteo.wind.speed}<sup>km/h</sup></h6>
                                     </Col>
 
                                 </Row>
@@ -103,7 +103,7 @@ function MyMeteo({ searched, nation }) {
                         </Row>
                         <Row className="justify-content-center mb-5">
                             <Col xs={12} className="text-center">
-                                <Link to={`/details/${searched}/${nation}`} className="nav-underline text-info">Click here to see weekly weather</Link>
+                                <Link to={`/details/${meteo.id}`} className="nav-underline text-info">Click here to see weekly weather</Link>
                             </Col>
                         </Row>
 

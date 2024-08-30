@@ -16,7 +16,7 @@ function MyMeteos(props) {
                         </>
                        
                     ) : (
-                        <MyMeteo searched={props.searched} />
+                        <MyMeteo searched={props.searched} nation={props.nation}/>
                     )
                 }
                     

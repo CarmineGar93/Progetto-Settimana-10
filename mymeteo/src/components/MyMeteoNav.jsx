@@ -24,7 +24,10 @@ function MyMeteoNav({handleResearch, handleNation}) {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Link to='/' className={isActive('/')}>Home</Link>
+                        <Link to='/' className={isActive('/')} onClick={() => {
+                            handleResearch('')
+                            handleNation('')
+                        }}>Home</Link>
                         <Link to='/details' className={isActive('/details')}>Details</Link>
                     </Nav>
                     <Form onSubmit={(e) => handleSubmit(e)} className="d-flex">
@@ -46,7 +49,6 @@ function MyMeteoNav({handleResearch, handleNation}) {
                             maxLength={2}
                             onChange={(e) => setNation(e.target.value)
                             }
-                            required
                         />
                         <Button type='submit' variant="outline-success">Search</Button>
                     </Form>
