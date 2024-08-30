@@ -106,8 +106,8 @@ function MyMeteo({ searched, nation }) {
                                 </Row>
                             </Col>
                         </Row>
-                        <Row className="justify-content-center mb-5">
-                            <Col xs={12} className="text-center">
+                        <Row className="mb-5">
+                            <Col xs={12}>
                                 <Link to={`/details/${meteo.id}`} className="nav-underline text-info">Click here to see weekly weather</Link>
                             </Col>
                         </Row>
