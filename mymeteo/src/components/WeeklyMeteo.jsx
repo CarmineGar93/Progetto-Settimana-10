@@ -69,7 +69,7 @@ function WeeklyMeteo() {
                     <Container className="my-3">
                         <Row>
                             <Col className="mb-5">
-                                <h1 className="fs-1">Weather in {meteo.city.name}</h1>
+                                <h1>{meteo.city.name}</h1>
                                 <h4>Next 5 days report</h4>
                             </Col>
                         </Row>
