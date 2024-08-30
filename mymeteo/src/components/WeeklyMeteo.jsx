@@ -86,7 +86,7 @@ function WeeklyMeteo({handleResearch, handleNation}) {
                                         <Col key={weather.dt}>
                                             <Row>
                                                 <Col xs={12}>
-                                                    <h5 className=" text-warning">{days[new Date(weather.dt_txt).getDay()]}</h5>
+                                                    <h5>{days[new Date(weather.dt_txt).getDay()]}</h5>
                                                 </Col>
                                                 <Col xs={12} className="mb-3">
                                                     <img alt="" src={handleSvg(weather.weather[0].main)}></img>
