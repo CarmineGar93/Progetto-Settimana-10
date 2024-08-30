@@ -54,10 +54,10 @@ function MyMeteo({ searched, nation, handleId }) {
         <>
             {
                 isLoading ? (
-                    <Container fluid>
+                    <Container fluid className="my-3">
                         <Row className=" justify-content-center">
 
-                            <Col xs={12} md={8}>
+                            <Col xs={12} md={8} className="text-center">
                                 <Spinner animation="border" variant="dark" />
                             </Col>
                         </Row>
@@ -67,7 +67,7 @@ function MyMeteo({ searched, nation, handleId }) {
                     <Container>
                         <Row>
                             <Col xs={12} className=" text-lef mb-3">
-                                <h1 className="mb-0">Weather {meteo.name}</h1>
+                                <h1 className="mb-0">{meteo.name}</h1>
                                 <h5>{`${days[date.getDay()]}  ${date.getDate()} ${months[date.getMonth()]}`} </h5>
                             </Col>
                             <Col xs={12} md={6}>
