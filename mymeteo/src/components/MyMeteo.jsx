@@ -1,10 +1,10 @@
-import { Container, Row, Col, Spinner} from "react-bootstrap"
+import { Container, Row, Col, Spinner, Button } from "react-bootstrap"
 import { useEffect, useState } from 'react'
 import rain from '../logos/rain.svg'
 import cloudy from '../logos/cloudy.svg'
 import sunny from '../logos/sunny.svg'
 import cloudsun from '../logos/cloudsun.svg'
-import { Link, useNavigate } from "react-router-dom"
+import {useNavigate } from "react-router-dom"
 
 function MyMeteo({ searched, nation, handleId }) {
     const kToC = (k) => {
@@ -89,27 +89,30 @@ function MyMeteo({ searched, nation, handleId }) {
                             <Col xs={12} md={6}>
                                 <Row>
                                     <Col xs={12} className="mb-3 text-md-end">
-                                    <p className="fs-3 d-inline">Min {kToC(meteo.main.temp_min)}<sup>°C</sup></p>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor" className="bi bi-thermometer d-none d-md-inline" viewBox="0 0 16 16">
+                                        <p className="fs-3 d-inline">Min {kToC(meteo.main.temp_min)}<sup>°C</sup></p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="blue" className="bi bi-thermometer d-none d-md-inline" viewBox="0 0 16 16">
                                             <path d="M8 14a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
                                             <path d="M8 0a2.5 2.5 0 0 0-2.5 2.5v7.55a3.5 3.5 0 1 0 5 0V2.5A2.5 2.5 0 0 0 8 0M6.5 2.5a1.5 1.5 0 1 1 3 0v7.987l.167.15a2.5 2.5 0 1 1-3.333 0l.166-.15z" />
                                         </svg>
-                                        
+
                                     </Col>
                                     <Col xs={12} className="mb-3 text-md-end">
-                                    <p className="fs-3 d-inline">Max {kToC(meteo.main.temp_max)}<sup>°C</sup></p>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor" className="bi bi-thermometer-high d-none d-md-inline" viewBox="0 0 16 16">
+                                        <p className="fs-3 d-inline">Max {kToC(meteo.main.temp_max)}<sup>°C</sup></p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="red" className="bi bi-thermometer-high d-none d-md-inline" viewBox="0 0 16 16">
                                             <path d="M9.5 12.5a1.5 1.5 0 1 1-2-1.415V2.5a.5.5 0 0 1 1 0v8.585a1.5 1.5 0 0 1 1 1.415" />
                                             <path d="M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1" />
                                         </svg>
-                                       
+
                                     </Col>
                                 </Row>
                             </Col>
                         </Row>
                         <Row className="mb-5">
                             <Col xs={12}>
-                                <Link to={`/details/${meteo.id}`} onClick={() => handleId(meteo.id)} className="nav-underline">Click here to see weekly weather</Link>
+                                <Button variant='danger' onClick={() => {
+                                    handleId(meteo.id)
+                                    navigate(`/details/${meteo.id}`)
+                                }}>Next 5 days weather</Button>
                             </Col>
                         </Row>
 
