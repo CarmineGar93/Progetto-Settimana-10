@@ -70,7 +70,7 @@ function WeeklyMeteo({handleResearch, handleNation}) {
 
                     </Container>
                 ) : (
-                    <Container className="my-3">
+                    <Container className="my-3 shadow-custom p-4" >
                         <Row>
                             <Col className="mb-5">
                                 <h1>{meteo.city.name}</h1>

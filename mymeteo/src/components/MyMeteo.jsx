@@ -64,7 +64,7 @@ function MyMeteo({ searched, nation, handleId }) {
 
                     </Container>
                 ) : (
-                    <Container className="border border-3 border-dark shadow-lg mb-3 custom">
+                    <Container className="shadow-custom mb-3 p-4">
                         <Row>
                             <Col xs={12} className=" text-lef mb-3">
                                 <h1 className="mb-0">{meteo.name}</h1>
@@ -109,7 +109,7 @@ function MyMeteo({ searched, nation, handleId }) {
                         </Row>
                         <Row className="mb-5">
                             <Col xs={12}>
-                                <Link to={`/details/${meteo.id}`} onClick={() => handleId(meteo.id)} className="nav-underline text-info">Click here to see weekly weather</Link>
+                                <Link to={`/details/${meteo.id}`} onClick={() => handleId(meteo.id)} className="nav-underline">Click here to see weekly weather</Link>
                             </Col>
                         </Row>
 
