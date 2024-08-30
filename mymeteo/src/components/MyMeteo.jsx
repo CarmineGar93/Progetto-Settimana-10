@@ -6,7 +6,7 @@ import sunny from '../logos/sunny.svg'
 import cloudsun from '../logos/cloudsun.svg'
 import { Link, useNavigate } from "react-router-dom"
 
-function MyMeteo({ searched, nation }) {
+function MyMeteo({ searched, nation, handleId }) {
     const kToC = (k) => {
         return (k - 273.15).toFixed(2)
     }
@@ -108,7 +108,7 @@ function MyMeteo({ searched, nation }) {
                         </Row>
                         <Row className="mb-5">
                             <Col xs={12}>
-                                <Link to={`/details/${meteo.id}`} className="nav-underline text-info">Click here to see weekly weather</Link>
+                                <Link to={`/details/${meteo.id}`} onClick={() => handleId(meteo.id)} className="nav-underline text-info">Click here to see weekly weather</Link>
                             </Col>
                         </Row>
 

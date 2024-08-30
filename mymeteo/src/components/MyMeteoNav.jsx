@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Navbar, Nav, Container, Form, Button } from 'react-bootstrap'
 import { Link, useLocation } from 'react-router-dom'
 
-function MyMeteoNav({handleResearch, handleNation}) {
+function MyMeteoNav({handleResearch, handleNation, id}) {
     const[research, setResearch] = useState('')
     const[nation, setNation] = useState('')
     const location = useLocation()
@@ -28,7 +28,7 @@ function MyMeteoNav({handleResearch, handleNation}) {
                             handleResearch('')
                             handleNation('')
                         }}>Home</Link>
-                        <Link to='/details' className={isActive('/details')}>Details</Link>
+                        <Link to='/details' className={isActive(`/details/${id}`)}>Details</Link>
                     </Nav>
                     {
                         location.pathname === '/' ? (

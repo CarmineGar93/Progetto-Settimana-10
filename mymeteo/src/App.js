@@ -5,32 +5,36 @@ import MyMeteoNav from './components/MyMeteoNav';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Welcome from './components/Welcome';
 import { useState } from 'react';
-import MyMeteos from './components/MyMeteos';
+import MyMeteoDefault from './components/MyMeteoDefault';
 import WeeklyMeteo from './components/WeeklyMeteo';
 import NotFound from './components/NotFound';
 
 function App() {
   const[searched, setSearched] = useState('')
   const[nation, setNation] = useState('')
+  const[id, setId] = useState('')
   const handleResearch = (data) => {
     setSearched(data)
   }
   const handleNation = (data) => {
     setNation(data)
   }
+  const handleId = (data) => {
+    setId(data)
+  }
   console.log(nation)
   return (
     <BrowserRouter>
     <Container fluid className='App p-0 vh-100'>
       <header>
-        <MyMeteoNav handleResearch={handleResearch} handleNation={handleNation}/>
+        <MyMeteoNav handleResearch={handleResearch} handleNation={handleNation} id={id}/>
       </header>
       <main>
         <Routes>
           <Route path='/' element={
             <>
             <Welcome></Welcome>
-            <MyMeteos searched={searched} nation={nation}></MyMeteos>
+            <MyMeteoDefault searched={searched} nation={nation} handleId={handleId}></MyMeteoDefault>
           </>
         }></Route>
           <Route path='/details/:city' element={<WeeklyMeteo />}></Route>
