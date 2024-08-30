@@ -73,7 +73,7 @@ function WeeklyMeteo() {
                                 <h3>Next 5 days report</h3>
                             </Col>
                         </Row>
-                        <Row className="mb-4">
+                        <Row className="mb-4" xs={1} sm={2} md={5}>
                             {
                                 list.map((weather) => {
                                     return (
