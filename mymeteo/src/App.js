@@ -9,24 +9,28 @@ import MyMeteos from './components/MyMeteos';
 
 function App() {
   const[searched, setSearched] = useState('')
-  const handleChange = (data) => {
+  const[nation, setNation] = useState('')
+  const handleResearch = (data) => {
     setSearched(data)
+  }
+  const handleNation = (data) => {
+    setNation(data)
   }
   return (
     <BrowserRouter>
     <Container fluid className='App p-0 vh-100'>
       <header>
-        <MyMeteoNav handle={handleChange}/>
+        <MyMeteoNav handleResearch={handleResearch} handleNation={handleNation}/>
       </header>
       <main>
         <Routes>
           <Route path='/' element={
             <>
             <Welcome></Welcome>
-            <MyMeteos searched={searched}></MyMeteos>
+            <MyMeteos searched={searched} nation={nation}></MyMeteos>
           </>
         }></Route>
-          <Route path='/details'></Route>
+          <Route path='/details/:city/:nation'></Route>
         </Routes>
       </main>
     </Container>

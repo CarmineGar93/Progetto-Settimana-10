@@ -2,11 +2,20 @@ import { useState } from 'react'
 import { Navbar, Nav, Container, Form, Button } from 'react-bootstrap'
 import { Link, useLocation } from 'react-router-dom'
 
-function MyMeteoNav() {
+function MyMeteoNav({handleResearch, handleNation}) {
     const[research, setResearch] = useState('')
+    const[nation, setNation] = useState('')
     const location = useLocation()
     const isActive = (path) =>{
         return location.pathname === path ? 'nav-link active' : 'nav-link'
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log('Ciao')
+        handleResearch(research)
+        handleNation(nation)
+        setResearch('')
+        setNation('')
     }
     return (
         <Navbar expand="lg" bg="dark" data-bs-theme="dark">
@@ -18,7 +27,7 @@ function MyMeteoNav() {
                         <Link to='/' className={isActive('/')}>Home</Link>
                         <Link to='/details' className={isActive('/details')}>Details</Link>
                     </Nav>
-                    <Form className="d-flex">
+                    <Form onSubmit={(e) => handleSubmit(e)} className="d-flex">
                         <Form.Control
                             type="search"
                             placeholder="Search your city"
@@ -26,8 +35,20 @@ function MyMeteoNav() {
                             aria-label="Search"
                             value={research}
                             onChange={(e) => setResearch(e.target.value)}
+                            required
                         />
-                        <Button variant="outline-success">Search</Button>
+                        <Form.Control
+                            type="text"
+                            placeholder="Insert here ISO 3166 Code "
+                            className="me-2"
+                            aria-label="Search"
+                            value={nation}
+                            maxLength={2}
+                            onChange={(e) => setNation(e.target.value)
+                            }
+                            required
+                        />
+                        <Button type='submit' variant="outline-success">Search</Button>
                     </Form>
                 </Navbar.Collapse>
             </Container>

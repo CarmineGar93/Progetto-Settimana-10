@@ -6,7 +6,20 @@ function MyMeteos(props) {
         <Container fluid>
             <Row>
                 <Col xs={12}>
-                    <MyMeteo searched='Sorrento' />
+                {
+                    !props.searched ? (
+                        <>
+                            <MyMeteo searched={'Milan'} nation={'IT'}/>
+                            <MyMeteo searched={'London'} nation={'GB'}/>
+                            <MyMeteo searched={'Minsk'} nation={'BY'}/>
+                            <MyMeteo searched={'New York'} nation={'US'}/>
+                        </>
+                       
+                    ) : (
+                        <MyMeteo searched={props.searched} />
+                    )
+                }
+                    
                 </Col>
             </Row>
         </Container>
