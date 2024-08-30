@@ -14,7 +14,7 @@ function App() {
   }
   return (
     <BrowserRouter>
-    <Container fluid className='App p-0'>
+    <Container fluid className='App p-0 vh-100'>
       <header>
         <MyMeteoNav handle={handleChange}/>
       </header>

@@ -2,12 +2,12 @@ import {Container, Row, Col} from 'react-bootstrap'
 
 function Welcome() {
     return (
-        <Container className='my-4'>
+        <Container fluid className='mb-5 bg-dark text-light border-top border-1 border-secondary py-5'>
             <Row className=' justify-content-center'>
-                <Col xs={12} md={8} className='text-center border border-3 Welcome'>
-                    <h1>Benvenuto/a in MyMeteo.com!</h1>
-                    <h5>Siamo felici che tu abbia scelto noi. Prego dai un'occhiata al meteo delle principali città d'Italia </h5>
-                    <h5>In alternativa cerca la tua città attraverso la barra di ricerca in alto </h5>
+                <Col xs={12} className='text-center Welcome'>
+                    <h2>Benvenuto/a in MyMeteo.com!</h2>
+                    <h6>Siamo felici che tu abbia scelto noi. Prego dai un'occhiata al meteo delle principali città d'Italia </h6>
+                    <h6>In alternativa cerca la tua città attraverso la barra di ricerca in alto </h6>
                 </Col>
             </Row>
         </Container>

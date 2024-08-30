@@ -3,7 +3,7 @@ import MyMeteo from "./MyMeteo"
 
 function MyMeteos(props) {
     return (
-        <Container>
+        <Container fluid>
             <Row>
                 <Col xs={12}>
                     <MyMeteo searched='Sorrento' />
