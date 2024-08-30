@@ -57,8 +57,10 @@ function WeeklyMeteo({handleResearch, handleNation}) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return (
-        <>
-            {
+        <Container>
+            <Row>
+                <Col xs={12}>
+                {
                 isLoading ? (
                     <Container fluid className="my-3">
                         <Row className=" justify-content-center">
@@ -117,8 +119,11 @@ function WeeklyMeteo({handleResearch, handleNation}) {
                     </Container>
                 )
             }
+                </Col>
+            </Row>
+           
 
-        </>
+        </Container>
     )
 }
 
