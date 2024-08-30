@@ -35,12 +35,20 @@ function MyMeteo({ searched, nation, handleId }) {
     const date = new Date()
     const handleSvg = (meteo) => {
         switch (meteo) {
-            case 'Clear':
+            case 'clear sky':
                 return sunny;
-            case 'Clouds':
+            case 'overcast clouds':
                 return cloudy;
-            case 'Rain':
+            case 'broken clouds':
+                return cloudy;
+            case 'light rain':
                 return rain;
+            case 'light intensity shower rain':
+                return rain;
+            case 'moderate rain':
+                return rain;
+            case 'scattered cloud':
+                return cloudsun;
             default:
                 return cloudsun
         }
@@ -73,7 +81,7 @@ function MyMeteo({ searched, nation, handleId }) {
                             <Col xs={12} md={6}>
                                 <Row className="mb-3">
                                     <Col xs={12} className="mb-3">
-                                        <img alt="" src={handleSvg(meteo.weather[0].main)} />
+                                        <img alt="" src={handleSvg(meteo.weather[0].description)} />
                                     </Col>
                                     <Col xs={12}>
                                         <p className="fs-1">{kToC(meteo.main.temp)}<sup>°C</sup></p>

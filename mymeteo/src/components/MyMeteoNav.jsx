@@ -11,7 +11,6 @@ function MyMeteoNav({handleResearch, handleNation, id}) {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log('Ciao')
         handleResearch(research)
         handleNation(nation)
         setResearch('')

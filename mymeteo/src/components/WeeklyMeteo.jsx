@@ -36,12 +36,20 @@ function WeeklyMeteo({handleResearch, handleNation}) {
 
     const handleSvg = (meteo) => {
         switch (meteo) {
-            case 'Clear':
+            case 'clear sky':
                 return sunny;
-            case 'Clouds':
+            case 'overcast clouds':
                 return cloudy;
-            case 'Rain':
+                case 'broken clouds':
+                return cloudy;
+            case 'light rain':
                 return rain;
+            case 'light intensity shower rain':
+                return rain;
+            case 'moderate rain':
+                return rain;
+            case 'scattered cloud':
+                return cloudsun;
             default:
                 return cloudsun
         }
@@ -89,7 +97,7 @@ function WeeklyMeteo({handleResearch, handleNation}) {
                                                     <h5>{days[new Date(weather.dt_txt).getDay()]}</h5>
                                                 </Col>
                                                 <Col xs={12} className="mb-3">
-                                                    <img alt="" src={handleSvg(weather.weather[0].main)}></img>
+                                                    <img alt="" src={handleSvg(weather.weather[0].description)}></img>
                                                 </Col>
                                                 <Col xs={12}>
                                                     <p className="fs-6 mb-0">Temp {kToC(weather.main.temp)}<sup>°C</sup></p>
