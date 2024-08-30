@@ -58,12 +58,14 @@ function WeeklyMeteo() {
         <>
             {
                 isLoading ? (
-                    <Container>
+                    <Container fluid className="my-3">
                         <Row className=" justify-content-center">
-                            <Col xs={12} md={8}>
+
+                            <Col xs={12} md={8} className="text-center">
                                 <Spinner animation="border" variant="dark" />
                             </Col>
                         </Row>
+
                     </Container>
                 ) : (
                     <Container className="my-3">
