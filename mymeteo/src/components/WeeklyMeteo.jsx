@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Container, Row, Col, Spinner, Button } from "react-bootstrap"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import rain from '../logos/rain.svg'
 import cloudy from '../logos/cloudy.svg'
 import sunny from '../logos/sunny.svg'
@@ -11,6 +11,7 @@ function WeeklyMeteo() {
     const [list, setList] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const params = useParams()
+    const navigate = useNavigate()
     const fetchWeek = async () => {
         try {
             const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?id=${params.city}&appid=0594cf0ca3334f8707602414bc4f5210`)
@@ -102,7 +103,7 @@ function WeeklyMeteo() {
                         </Row>
                         <Row>
                             <Col>
-                                <Button variant='danger'>Torna alla home</Button>
+                                <Button variant='danger' onClick={()=>navigate('/')}>Torna alla home</Button>
                             </Col>
                         </Row>
                     </Container>
