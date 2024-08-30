@@ -4,12 +4,13 @@ import rain from '../logos/rain.svg'
 import cloudy from '../logos/cloudy.svg'
 import sunny from '../logos/sunny.svg'
 import cloudsun from '../logos/cloudsun.svg'
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 function MyMeteo({ searched, nation }) {
     const kToC = (k) => {
         return (k - 273.15).toFixed(2)
     }
+    const navigate = useNavigate()
     const [meteo, setMeteo] = useState({})
     const [isLoading, setIsLoading] = useState(true)
     const retrieveMeteo = async () => {
@@ -20,9 +21,13 @@ function MyMeteo({ searched, nation }) {
                 console.log(data)
                 setMeteo(data)
                 setIsLoading(false)
+            } else {
+                throw new Error('Errore')
             }
         } catch (err) {
             console.log(err)
+            navigate('/Notfound')
+
         }
     }
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']

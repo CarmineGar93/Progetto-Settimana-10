@@ -7,6 +7,7 @@ import Welcome from './components/Welcome';
 import { useState } from 'react';
 import MyMeteos from './components/MyMeteos';
 import WeeklyMeteo from './components/WeeklyMeteo';
+import NotFound from './components/NotFound';
 
 function App() {
   const[searched, setSearched] = useState('')
@@ -33,6 +34,7 @@ function App() {
           </>
         }></Route>
           <Route path='/details/:city' element={<WeeklyMeteo />}></Route>
+          <Route path='*' element={<NotFound handleResearch={handleResearch} handleNation={handleNation}/>}></Route>
         </Routes>
       </main>
     </Container>
