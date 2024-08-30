@@ -103,7 +103,7 @@ function WeeklyMeteo() {
                         </Row>
                         <Row>
                             <Col>
-                                <Button variant='danger' onClick={()=>navigate('/')}>Torna alla home</Button>
+                                <Button variant='danger' onClick={()=>navigate('/')}>Homepage</Button>
                             </Col>
                         </Row>
                     </Container>
