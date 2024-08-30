@@ -67,7 +67,7 @@ function MyMeteo({ searched, nation, handleId }) {
                     <Container className="shadow-custom mb-3 p-4">
                         <Row>
                             <Col xs={12} className=" text-lef mb-3">
-                                <h1 className="mb-0">{meteo.name}</h1>
+                                <h1 className="mb-0 text-dark">{meteo.name}</h1>
                                 <h5>{`${days[date.getDay()]}  ${date.getDate()} ${months[date.getMonth()]}`} </h5>
                             </Col>
                             <Col xs={12} md={6}>
@@ -89,7 +89,7 @@ function MyMeteo({ searched, nation, handleId }) {
                             <Col xs={12} md={6}>
                                 <Row>
                                     <Col xs={12} className="mb-3 text-md-end">
-                                        <p className="fs-3 d-inline">Min {kToC(meteo.main.temp_min)}<sup>°C</sup></p>
+                                        <p className="fs-3 d-inline blue">Min {kToC(meteo.main.temp_min)}<sup>°C</sup></p>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="blue" className="bi bi-thermometer d-none d-md-inline" viewBox="0 0 16 16">
                                             <path d="M8 14a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
                                             <path d="M8 0a2.5 2.5 0 0 0-2.5 2.5v7.55a3.5 3.5 0 1 0 5 0V2.5A2.5 2.5 0 0 0 8 0M6.5 2.5a1.5 1.5 0 1 1 3 0v7.987l.167.15a2.5 2.5 0 1 1-3.333 0l.166-.15z" />
@@ -97,7 +97,7 @@ function MyMeteo({ searched, nation, handleId }) {
 
                                     </Col>
                                     <Col xs={12} className="mb-3 text-md-end">
-                                        <p className="fs-3 d-inline">Max {kToC(meteo.main.temp_max)}<sup>°C</sup></p>
+                                        <p className="fs-3 d-inline text-danger">Max {kToC(meteo.main.temp_max)}<sup>°C</sup></p>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="red" className="bi bi-thermometer-high d-none d-md-inline" viewBox="0 0 16 16">
                                             <path d="M9.5 12.5a1.5 1.5 0 1 1-2-1.415V2.5a.5.5 0 0 1 1 0v8.585a1.5 1.5 0 0 1 1 1.415" />
                                             <path d="M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1" />
