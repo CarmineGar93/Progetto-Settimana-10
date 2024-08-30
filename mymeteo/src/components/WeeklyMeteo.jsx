@@ -6,7 +6,7 @@ import cloudy from '../logos/cloudy.svg'
 import sunny from '../logos/sunny.svg'
 import cloudsun from '../logos/cloudsun.svg'
 
-function WeeklyMeteo() {
+function WeeklyMeteo({handleResearch, handleNation}) {
     const [meteo, setMeteo] = useState({})
     const [list, setList] = useState([])
     const [isLoading, setIsLoading] = useState(true)
@@ -52,6 +52,8 @@ function WeeklyMeteo() {
 
     useEffect(() => {
         fetchWeek()
+        handleResearch('')
+        handleNation('')
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return (
@@ -107,7 +109,9 @@ function WeeklyMeteo() {
                         </Row>
                         <Row>
                             <Col>
-                                <Button variant='danger' onClick={()=>navigate('/')}>Homepage</Button>
+                                <Button variant='danger' onClick={()=>{
+
+                                    navigate('/')}}>Homepage</Button>
                             </Col>
                         </Row>
                     </Container>

@@ -37,7 +37,7 @@ function App() {
             <MyMeteoDefault searched={searched} nation={nation} handleId={handleId}></MyMeteoDefault>
           </>
         }></Route>
-          <Route path='/details/:city' element={<WeeklyMeteo />}></Route>
+          <Route path='/details/:city' element={<WeeklyMeteo handleResearch={handleResearch} handleNation={handleNation}/>}></Route>
           <Route path='*' element={<NotFound handleResearch={handleResearch} handleNation={handleNation}/>}></Route>
         </Routes>
       </main>
