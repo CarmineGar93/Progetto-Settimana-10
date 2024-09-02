@@ -51,7 +51,7 @@ function MyMeteoNav({handleResearch, handleNation, id}) {
                             onChange={(e) => setNation(e.target.value)
                             }
                         />
-                        <Button type='submit' variant="outline-success">Search</Button>
+                        <Button type='submit' variant="outline-danger">Search</Button>
                     </Form>
                         ) : (
                             <></>
