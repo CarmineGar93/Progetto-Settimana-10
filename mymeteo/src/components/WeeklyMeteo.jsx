@@ -87,11 +87,11 @@ function WeeklyMeteo({handleResearch, handleNation}) {
                                 <h4>Next 5 days report</h4>
                             </Col>
                         </Row>
-                        <Row className="mb-4" xs={1} sm={2} md={5}>
+                        <Row className="mb-4" xs={2} md={5}>
                             {
                                 list.map((weather) => {
                                     return (
-                                        <Col key={weather.dt}>
+                                        <Col key={weather.dt} className="mb-4">
                                             <Row>
                                                 <Col xs={12}>
                                                     <h5>{days[new Date(weather.dt_txt).getDay()]}</h5>
