@@ -109,7 +109,7 @@ function WeeklyMeteo({handleResearch, handleNation}) {
                                                     <p className="fs-6 mb-0">Feels like: {kToC(weather.main.feels_like)}<sup>°C</sup></p>
                                                 </Col>
                                                 <Col xs={12}>
-                                                    <p className="fs-6 mb-0">Wind speed {weather.wind.speed}<sup>km/h</sup></p>
+                                                    <p className="fs-6 mb-0">Wind speed {weather.wind.speed}<sup>m/s</sup></p>
                                                 </Col>
                                             </Row>
                                         </Col>

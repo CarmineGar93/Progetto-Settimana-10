@@ -89,7 +89,7 @@ function MyMeteo({ searched, nation, handleId }) {
                                     <Col xs={12}>
                                         <h6 className="mb-0">Humidity: {meteo.main.humidity}%</h6>
                                         <h6 className="mb-0">Feels like: {kToC(meteo.main.feels_like)}<sup>°C</sup></h6>
-                                        <h6 className="mb-0">Wind speed {meteo.wind.speed}<sup>km/h</sup></h6>
+                                        <h6 className="mb-0">Wind speed {meteo.wind.speed}<sup>m/s</sup></h6>
                                     </Col>
 
                                 </Row>
