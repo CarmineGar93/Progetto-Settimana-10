@@ -6,6 +6,27 @@ import sunny from '../logos/sunny.svg'
 import cloudsun from '../logos/cloudsun.svg'
 import {useNavigate } from "react-router-dom"
 
+export const handleSvg = (meteo) => {
+    switch (meteo) {
+        case 'clear sky':
+            return sunny;
+        case 'overcast clouds':
+            return cloudy;
+        case 'broken clouds':
+            return cloudy;
+        case 'light rain':
+            return rain;
+        case 'light intensity shower rain':
+            return rain;
+        case 'moderate rain':
+            return rain;
+        case 'scattered cloud':
+            return cloudsun;
+        default:
+            return cloudsun
+    }
+}
+
 function MyMeteo({ searched, nation, handleId }) {
     const kToC = (k) => {
         return (k - 273.15).toFixed(2)
@@ -33,27 +54,6 @@ function MyMeteo({ searched, nation, handleId }) {
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'Dicember']
     const date = new Date()
-    const handleSvg = (meteo) => {
-        switch (meteo) {
-            case 'clear sky':
-                return sunny;
-            case 'overcast clouds':
-                return cloudy;
-            case 'broken clouds':
-                return cloudy;
-            case 'light rain':
-                return rain;
-            case 'light intensity shower rain':
-                return rain;
-            case 'moderate rain':
-                return rain;
-            case 'scattered cloud':
-                return cloudsun;
-            default:
-                return cloudsun
-        }
-    }
-
     useEffect(() => {
         retrieveMeteo()
         // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react"
 import { Container, Row, Col, Spinner, Button } from "react-bootstrap"
 import { useNavigate, useParams } from "react-router-dom"
-import rain from '../logos/rain.svg'
-import cloudy from '../logos/cloudy.svg'
-import sunny from '../logos/sunny.svg'
-import cloudsun from '../logos/cloudsun.svg'
+import { handleSvg } from "./MyMeteo"
 
 function WeeklyMeteo({handleResearch, handleNation}) {
     const [meteo, setMeteo] = useState({})
@@ -33,27 +30,6 @@ function WeeklyMeteo({handleResearch, handleNation}) {
         }
     }
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-
-    const handleSvg = (meteo) => {
-        switch (meteo) {
-            case 'clear sky':
-                return sunny;
-            case 'overcast clouds':
-                return cloudy;
-                case 'broken clouds':
-                return cloudy;
-            case 'light rain':
-                return rain;
-            case 'light intensity shower rain':
-                return rain;
-            case 'moderate rain':
-                return rain;
-            case 'scattered cloud':
-                return cloudsun;
-            default:
-                return cloudsun
-        }
-    }
     const kToC = (k) => {
         return (k - 273.15).toFixed(2)
     }
