@@ -7,21 +7,23 @@ import cloudsun from '../logos/cloudsun.svg'
 import {useNavigate } from "react-router-dom"
 
 export const handleSvg = (meteo) => {
+    const dOrN = meteo.includes('d') ? 'd' : 'n'
+    console.log(dOrN)
     switch (meteo) {
-        case 'clear sky':
+        case `01${dOrN}`:
             return sunny;
-        case 'overcast clouds':
-            return cloudy;
-        case 'broken clouds':
-            return cloudy;
-        case 'light rain':
-            return rain;
-        case 'light intensity shower rain':
-            return rain;
-        case 'moderate rain':
-            return rain;
-        case 'scattered cloud':
+        case `02${dOrN}`:
+            return sunny;
+        case `03${dOrN}`:
             return cloudsun;
+        case `04${dOrN}`:
+            return cloudy;
+        case `05${dOrN}`:
+            return cloudy;
+        case `09${dOrN}`:
+            return rain;
+        case `10${dOrN}`:
+            return rain;
         default:
             return cloudsun
     }
@@ -84,7 +86,7 @@ function MyMeteo({ searched, nation, handleId }) {
                             <Col xs={12} md={6}>
                                 <Row className="mb-3">
                                     <Col xs={12} className="mb-3">
-                                        <img alt="" src={handleSvg(meteo.weather[0].description)} />
+                                        <img alt="" src={handleSvg(meteo.weather[0].icon)} />
                                     </Col>
                                     <Col xs={12}>
                                         <p className="fs-1">{kToC(meteo.main.temp)}<sup>°C</sup></p>

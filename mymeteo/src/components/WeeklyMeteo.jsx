@@ -75,7 +75,7 @@ function WeeklyMeteo({handleResearch, handleNation}) {
                                                     <h5>{days[new Date(weather.dt_txt).getDay()]}</h5>
                                                 </Col>
                                                 <Col xs={12} className="mb-3">
-                                                    <img alt="" src={handleSvg(weather.weather[0].description)}></img>
+                                                    <img alt="" src={handleSvg(weather.weather[0].icon)}></img>
                                                 </Col>
                                                 <Col xs={12}>
                                                     <p className="fs-6 mb-0">Temp {kToC(weather.main.temp)}<sup>°C</sup></p>
