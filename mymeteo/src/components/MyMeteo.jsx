@@ -8,7 +8,6 @@ import {useNavigate } from "react-router-dom"
 
 export const handleSvg = (meteo) => {
     const dOrN = meteo.includes('d') ? 'd' : 'n'
-    console.log(dOrN)
     switch (meteo) {
         case `01${dOrN}`:
             return sunny;
