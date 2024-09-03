@@ -7,7 +7,7 @@ function Welcome() {
                 <Col xs={12} className='text-center Welcome'>
                     <h2>Welcome in MyMeteo.com!</h2>
                     <h6>We're glad you're here. Have a look at the most important city's weather</h6>
-                    <h6>Or look at your favourite city's weather typing it in the search bar up here !</h6>
+                    <h6>Or look for your favourite city by typing it in the search bar up here !</h6>
                 </Col>
             </Row>
         </Container>

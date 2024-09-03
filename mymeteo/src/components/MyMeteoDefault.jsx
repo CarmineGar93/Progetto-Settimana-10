@@ -6,20 +6,20 @@ function MyMeteoDefault(props) {
         <Container fluid>
             <Row>
                 <Col xs={12}>
-                {
-                    !props.searched ? (
-                        <>
-                            <MyMeteo searched={'Milan'} nation={'IT'} handleId={props.handleId}/>
-                            <MyMeteo searched={'London'} nation={'GB'} handleId={props.handleId}/>
-                            <MyMeteo searched={'Minsk'} nation={'BY'} handleId={props.handleId}/>
-                            <MyMeteo searched={'New York'} nation={'US'} handleId={props.handleId}/>
-                        </>
-                       
-                    ) : (
-                        <MyMeteo searched={props.searched} nation={props.nation} handleId={props.handleId}/>
-                    )
-                }
-                    
+                    {
+                        !props.searched ? (
+                            <>
+                                <MyMeteo searched={'Milan'} nation={'IT'} handleId={props.handleId} />
+                                <MyMeteo searched={'London'} nation={'GB'} handleId={props.handleId} />
+                                <MyMeteo searched={'Minsk'} nation={'BY'} handleId={props.handleId} />
+                                <MyMeteo searched={'New York'} nation={'US'} handleId={props.handleId} />
+                            </>
+
+                        ) : (
+                            <MyMeteo searched={props.searched} nation={props.nation} handleId={props.handleId} />
+                        )
+                    }
+
                 </Col>
             </Row>
         </Container>
