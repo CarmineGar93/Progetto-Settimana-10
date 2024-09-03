@@ -16,7 +16,6 @@ function WeeklyMeteo({handleResearch, handleNation}) {
                 const data = await response.json()
                 console.log(data)
                 setMeteo(data)
-                setIsLoading(false)
                 const filter = data.list.filter((list) => {
                     return list.dt_txt.includes('15:00')
                 })
@@ -38,6 +37,9 @@ function WeeklyMeteo({handleResearch, handleNation}) {
         fetchWeek()
         handleResearch('')
         handleNation('')
+        setTimeout(()=>{
+            setIsLoading(false)
+        }, 500)
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return (
@@ -46,10 +48,10 @@ function WeeklyMeteo({handleResearch, handleNation}) {
                 <Col xs={12}>
                 {
                 isLoading ? (
-                    <Container fluid className="my-3">
+                    <Container fluid className="my-5">
                         <Row className=" justify-content-center">
 
-                            <Col xs={12} md={8} className="text-center">
+                            <Col xs={12} md={8} className="text-center my-5">
                                 <Spinner animation="border" variant="dark" />
                             </Col>
                         </Row>

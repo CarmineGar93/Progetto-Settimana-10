@@ -41,7 +41,6 @@ function MyMeteo({ searched, nation, handleId }) {
                 const data = await response.json()
                 console.log(data)
                 setMeteo(data)
-                setIsLoading(false)
             } else {
                 throw new Error('Errore')
             }
@@ -55,17 +54,21 @@ function MyMeteo({ searched, nation, handleId }) {
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'Dicember']
     const date = new Date()
     useEffect(() => {
+        setIsLoading(true)
         retrieveMeteo()
+        setTimeout(()=>{
+            setIsLoading(false)
+        }, 500)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searched])
     return (
         <>
             {
                 isLoading ? (
-                    <Container fluid className="my-3">
+                    <Container fluid className="my-5">
                         <Row className=" justify-content-center">
 
-                            <Col xs={12} md={8} className="text-center">
+                            <Col xs={12} md={8} className="text-center my-5">
                                 <Spinner animation="border" variant="dark" />
                             </Col>
                         </Row>
